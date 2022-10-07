@@ -1,0 +1,24 @@
+{
+	"name": "projeto-final-e-feira-backend-node",
+	"version": "1.0.0",
+	"description": "projeto final do curso estartando devs",
+	"main": "index.js",
+	"scripts": {
+		"test": "nodemon ./server.js",
+		"fix": "eslint --fix ./*.js",
+		"prepare": "husky install",
+		"format": "prettier --write \"**/*.{js,jsx,json,md}\""
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"eslint": "^8.24.0",
+		"eslint-config-prettier": "8.5.0",
+		"husky": "^8.0.1",
+		"nodemon": "^2.0.20",
+		"prettier": "^2.7.1"
+	},
+	"dependencies": {
+		"log": "^6.3.1"
+	}
+}
