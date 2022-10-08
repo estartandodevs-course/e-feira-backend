@@ -4,7 +4,7 @@
 	"description": "projeto final do curso estartando devs",
 	"main": "index.js",
 	"scripts": {
-		"test": "nodemon ./server.js",
+		"app": "nodemon ./server.js",
 		"fix": "eslint --fix ./*.js",
 		"prepare": "husky install",
 		"format": "prettier --write \"**/*.{js,jsx,json,md}\""
@@ -15,11 +15,13 @@
 		"eslint": "^8.24.0",
 		"eslint-config-prettier": "8.5.0",
 		"husky": "^8.0.1",
+		"log": "^6.3.1",
 		"nodemon": "^2.0.20",
 		"prettier": "^2.7.1"
 	},
 	"dependencies": {
-		"log": "^6.3.1",
+		"body-parser": "^1.20.1",
+		"express": "^4.18.1",
 		"swagger-ui": "^4.14.2"
 	}
 }
