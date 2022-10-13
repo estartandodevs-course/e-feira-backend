@@ -4,7 +4,8 @@
 	"description": "projeto final do curso estartando devs",
 	"main": "index.js",
 	"scripts": {
-		"start": "nodemon src/server.js",
+		"start": "node src/server.js",
+		"conn": "node src/config/test.js",
 		"build": "node -v",
 		"fix": "eslint --fix ./*.js",
 		"prepare": "husky install",
