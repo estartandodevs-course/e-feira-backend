@@ -1,16 +1,16 @@
 {
 	"development": {
-		"username": "DB_USER",
-		"password": "DB_PASS",
-		"database": "DB_NAME",
-		"host": "DB_HOST",
+		"username": "postgres",
+		"password": "12345",
+		"database": "projeto-final",
+		"host": "localhost",
 		"dialect": "postgres"
 	},
 	"test": {
-		"username": "DB_USER",
-		"password": "DB_PASS",
-		"database": "DB_NAME",
-		"host": "DB_HOST",
+		"username": "postgres",
+		"password": "12345",
+		"database": "projeto-final",
+		"host": "localhost",
 		"dialect": "postgres"
 	},
 	"production": {

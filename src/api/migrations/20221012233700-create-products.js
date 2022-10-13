@@ -18,8 +18,15 @@ module.exports = {
 			product_weight: {
 				type: Sequelize.STRING,
 			},
-			inventory: {
+			provider_id: {
+				allowNull: false,
 				type: Sequelize.INTEGER,
+				references: { model: "Providers", key: "id" },
+			},
+			category_id: {
+				allowNull: false,
+				type: Sequelize.INTEGER,
+				references: { model: "Categories", key: "id" },
 			},
 			createdAt: {
 				allowNull: false,
