@@ -14,10 +14,10 @@
 		"dialect": "postgres"
 	},
 	"production": {
-   "username": "postgres",
-	 "password": "12345",
-	 "database": "projeto-final",
-	 "host": "localhost",
-	 "dialect": "postgres"
+		"username": "postgres",
+		"password": "12345",
+		"database": "projeto-final",
+		"host": "localhost",
+		"dialect": "postgres"
 	}
 }
