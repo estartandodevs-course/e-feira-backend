@@ -11,5 +11,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(products, providers, highlights, category);
+app.get("/", (req, res) => {
+    res.status(200).send("test")
+})
 
 app.listen(PORT, () => console.log(`Server up in PORT ${PORT}`));
