@@ -53,18 +53,31 @@ class ProductController {
 			return res.status(500).json(error.message);
 		}
 	}
-	//não pronto
+	
 	static async GetAllProductsFromAProvider(req, res) {
-		const { providerId } = req.params;
+		const { provider_id } = req.params;
 		try {
 			const allProductsOfProvider = await database.Products.findAll({
-				where: { providerId: Number(provider_id) },
+				where: { provider_id: Number(provider_id) },
 			});
 			return res.status(200).json(allProductsOfProvider);
 		} catch (error) {
 			return res.status(500).json(error.message);
 		}
 	}
+
+	static async GetAllProductsFromACategory(req, res) {
+		const { category_id } = req.params;
+		try {
+			const allProductsOfCategory = await database.Products.findAll({
+				where: { category_id: Number(category_id) },
+			});
+			return res.status(200).json(allProductsOfCategory);
+		} catch (error) {
+			return res.status(500).json(error.message);
+		}
+	}
 }
+
 
 module.exports = ProductController;
