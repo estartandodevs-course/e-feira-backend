@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
 	Highlights.init(
 		{
 			photo_url: DataTypes.STRING,
+			name: DataTypes.STRING,
 		},
 		{
 			sequelize,

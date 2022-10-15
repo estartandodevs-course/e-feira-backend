@@ -15,6 +15,12 @@ module.exports = {
 			photo_url: {
 				type: Sequelize.STRING,
 			},
+			type_frontend_attribute: {
+				type: Sequelize.STRING,
+			},
+			alt_frontend_attribute: {
+				type: Sequelize.STRING,
+			},
 			createdAt: {
 				allowNull: false,
 				type: Sequelize.DATE,

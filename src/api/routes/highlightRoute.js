@@ -3,10 +3,10 @@ const HighlightController = require("../controllers/highlightController.js");
 
 const router = Router();
 
-router.get("/api/highlights", HighlightController.GetAllHighlights);
-router.get("/api/highlights/:id", HighlightController.GetOneHighlight);
-router.post("/api/highlights", HighlightController.CreateAHighlight);
-router.put("/api/highlights/:id", HighlightController.UpdateAHighlight);
-router.delete("/api/highlights/:id", HighlightController.DeleteAHighlight);
+router.get("/api/home/highlights", HighlightController.GetAllHighlights);
+router.get("/api/home/highlights/:id", HighlightController.GetOneHighlight);
+router.post("/api/home/highlights", HighlightController.CreateAHighlight);
+router.put("/api/home/highlights/:id", HighlightController.UpdateAHighlight);
+router.delete("/api/home/highlights/:id", HighlightController.DeleteAHighlight);
 
 module.exports = router;

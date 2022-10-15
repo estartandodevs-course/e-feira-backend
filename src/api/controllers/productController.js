@@ -53,7 +53,7 @@ class ProductController {
 			return res.status(500).json(error.message);
 		}
 	}
-	
+
 	static async GetAllProductsFromAProvider(req, res) {
 		const { provider_id } = req.params;
 		try {
@@ -78,6 +78,5 @@ class ProductController {
 		}
 	}
 }
-
 
 module.exports = ProductController;
