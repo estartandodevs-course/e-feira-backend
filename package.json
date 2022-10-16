@@ -12,9 +12,9 @@
 		"prepare": "husky install",
 		"format": "prettier --write \"**/*.{js,jsx,json,md}\"",
 		"db:migrate": "npx sequelize-cli db:migrate",
-		"db:undo:migrate": "npx sequelize-cli db:migrate:undo:all",
+		"db:migrate:undo": "npx sequelize-cli db:migrate:undo:all",
 		"db:seed": "npx sequelize-cli db:seed:all",
-		"db:undo:seed": "npx sequelize-cli db:seed:undo:all",
+		"db:seed:undo": "npx sequelize-cli db:seed:undo:all",
 		"up": "docker-compose up -d",
 		"down": "docker-compose down"
 	},
