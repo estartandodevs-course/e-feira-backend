@@ -3,14 +3,15 @@ const database = require("../models");
 class CategoryController {
 	static async GetAllCategories(req, res) {
 		try {
-			const allCategories = await database.Categories.findAll(
-				{ attributes: [
-					['id','id'],
-					['name','name'],
-					['photo_url', 'image'], 
-					['type_frontend_attribute', 'type'],
-					['alt_frontend_attribute', 'alt']]
-				});
+			const allCategories = await database.Categories.findAll({
+				attributes: [
+					["id", "id"],
+					["name", "name"],
+					["photo_url", "image"],
+					["type_frontend_attribute", "type"],
+					["alt_frontend_attribute", "alt"],
+				],
+			});
 			return res.status(200).json(allCategories);
 		} catch (error) {
 			return res.status(500).json(error.message);

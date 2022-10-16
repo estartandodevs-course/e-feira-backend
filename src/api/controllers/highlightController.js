@@ -1,15 +1,14 @@
 const database = require("../models/index");
-const highlight = require("../mappers/highlightResponse")
 
 class HighlightController {
 	static async GetAllHighlights(req, res) {
 		try {
-			const allHighlights = await database.Highlights.findAll(
-				{attributes: [
-					['photo_url', 'url'],
-					['name', 'title']]
-				}
-			);
+			const allHighlights = await database.Highlights.findAll({
+				attributes: [
+					["photo_url", "url"],
+					["name", "title"],
+				],
+			});
 			return res.status(200).json(allHighlights);
 		} catch (error) {
 			return res.status(500).json(error.message);
