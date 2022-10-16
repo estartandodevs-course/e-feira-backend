@@ -1,5 +1,4 @@
 const database = require("../models");
-const { Op } = require("sequelize");
 const response = require("../mappers/latestStreetMarketResponse");
 class LatestStreetMarketController {
 	static async GetAllProductsFromtheHomePage(req, res) {
