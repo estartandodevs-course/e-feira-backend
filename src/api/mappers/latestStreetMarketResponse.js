@@ -1,10 +1,10 @@
-const response = (products1, products2) => [
+const response = (provider1, provider2, products1, products2) => [
 	{
-		title: "Vendinha do Seu Francisco",
+		title: provider1.name,
 		products: [products1],
 	},
 	{
-		title: "Raizs Orgânicas",
+		title: provider2.name,
 		products: [products2],
 	},
 ];
