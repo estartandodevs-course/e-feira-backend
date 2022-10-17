@@ -24,6 +24,9 @@ module.exports = {
 			product_weight: {
 				type: Sequelize.STRING,
 			},
+			price: {
+				type: Sequelize.FLOAT,
+			},
 			provider_id: {
 				allowNull: false,
 				type: Sequelize.INTEGER,

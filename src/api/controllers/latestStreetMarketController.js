@@ -13,6 +13,7 @@ class LatestStreetMarketController {
 					["product_weight", "subtitle"],
 				],
 				where: { provider_id: 1 },
+				limit: 5
 			});
 			const allProductsOfProvider2 = await database.Products.findAll({
 				attributes: [

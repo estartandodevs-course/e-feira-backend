@@ -3,9 +3,6 @@ const LatestStreetMarketController = require("../controllers/latestStreetMarketC
 
 const router = Router();
 
-router.get(
-	"/api/home/latest-streetMarket",
-	LatestStreetMarketController.GetAllProductsFromtheHomePage
-);
+router.get("/api/home/latest-streetMarket",LatestStreetMarketController.GetAllProductsFromtheHomePage);
 
 module.exports = router;
