@@ -77,6 +77,18 @@ class ProductController {
 			return res.status(500).json(error.message);
 		}
 	}
+		static async GetProductsFromName(req, res) {
+		const { Op } = require("sequelize");
+		const { name } = req.query;
+		try {
+			const product = await database.Products.findAll({
+			name: { [Op.like] :{ name }  },
+			});
+			return res.status(200).json(product);
+		} catch (error) {
+			return res.status(500).json(error.message);
+		}
+	}
 }
 
 module.exports = ProductController;

@@ -53,14 +53,14 @@ class ProviderController {
 			return res.status(500).json(error.message);
 		}
 	}
-		static async GetAProviderandTheirProducts(req, res) {
-			const { id } = req.params;
-			try {
-				const providers = await database.Providers.findOne({
-					where: { id: Number(id) },
-				});
-				const products = await database.Products.findAll({
-					attributes: [
+	static async GetAProviderandTheirProducts(req, res) {
+		const { id } = req.params;
+		try {
+			const providers = await database.Providers.findOne({
+				where: { id: Number(id) },
+			});
+			const products = await database.Products.findAll({
+				attributes: [
 					["id", "id"],
 					["name", "name"],
 					["photo_url", "image"],
@@ -68,13 +68,12 @@ class ProviderController {
 					["alt_frontend_attribute", "alt"],
 					["product_weight", "subtitle"],
 					["price", "price"],
-					],
-					where: { provider_id: Number(id) },
-
-				})
-				return res.status(200).json(response(products, providers));
-			} catch (error) {
-				return res.status(500).json(error.message);
+				],
+				where: { provider_id: Number(id) },
+			});
+			return res.status(200).json(response(products, providers));
+		} catch (error) {
+			return res.status(500).json(error.message);
 		}
 	}
 }

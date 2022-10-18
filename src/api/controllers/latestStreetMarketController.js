@@ -19,7 +19,7 @@ class LatestStreetMarketController {
 					["product_weight", "subtitle"],
 				],
 				where: { provider_id: 1 },
-				limit: 5
+				limit: 5,
 			});
 			const allProductsOfProvider2 = await database.Products.findAll({
 				attributes: [
@@ -34,7 +34,14 @@ class LatestStreetMarketController {
 			});
 			return res
 				.status(200)
-				.json(response(dataProvider1, dataProvider2, allProductsOfProvider1, allProductsOfProvider2));
+				.json(
+					response(
+						dataProvider1,
+						dataProvider2,
+						allProductsOfProvider1,
+						allProductsOfProvider2
+					)
+				);
 		} catch (error) {
 			return res.status(500).json(error.message);
 		}
