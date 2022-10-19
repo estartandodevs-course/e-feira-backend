@@ -3,6 +3,12 @@ const response = require("../mappers/latestStreetMarketResponse");
 class LatestStreetMarketController {
 	static async GetAllProductsFromtheHomePage(req, res) {
 		try {
+			const dataProvider1 = await database.Providers.findOne({
+                where: { id: 1 },
+            });
+            const dataProvider2 = await database.Providers.findOne({
+                where: { id: 2 },
+            });
 			const allProductsOfProvider1 = await database.Products.findAll({
 				attributes: [
 					["id", "id"],
@@ -28,7 +34,12 @@ class LatestStreetMarketController {
 			});
 			return res
 				.status(200)
-				.json(response(allProductsOfProvider1, allProductsOfProvider2));
+				.json(response(
+					dataProvider1,
+					dataProvider2,
+					allProductsOfProvider1,
+					allProductsOfProvider2
+				));
 		} catch (error) {
 			return res.status(500).json(error.message);
 		}
