@@ -8,8 +8,8 @@ module.exports = {
 		host: process.env.DB_HOST,
 		dialect: process.env.DB_DIALECT,
 		dialectOptions: {
-            ssl: process.env.DB_SSL,
-        },
+			ssl: process.env.DB_SSL,
+		},
 	},
 	test: {
 		username: process.env.DB_USER,
@@ -18,8 +18,8 @@ module.exports = {
 		host: process.env.DB_HOST,
 		dialect: process.env.DB_DIALECT,
 		dialectOptions: {
-            ssl: process.env.DB_SSL,
-        },
+			ssl: process.env.DB_SSL,
+		},
 	},
 	production: {
 		username: process.env.DB_USER,
@@ -28,7 +28,7 @@ module.exports = {
 		host: process.env.DB_HOST,
 		dialect: process.env.DB_DIALECT,
 		dialectOptions: {
-            ssl: process.env.DB_SSL,
-        },
+			ssl: process.env.DB_SSL,
+		},
 	},
 };
