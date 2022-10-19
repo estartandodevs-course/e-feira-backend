@@ -10,6 +10,7 @@ module.exports = {
 		dialectOptions: {
             ssl: true,
         },
+		ssl: process.env.DB_SSL,
 	},
 	test: {
 		username: process.env.DB_USER,
@@ -20,6 +21,7 @@ module.exports = {
 		dialectOptions: {
             ssl: true,
         },
+		ssl: process.env.DB_SSL,
 	},
 	production: {
 		username: process.env.DB_USER,
@@ -30,5 +32,6 @@ module.exports = {
 		dialectOptions: {
             ssl: true,
         },
+		ssl: process.env.DB_SSL,
 	},
 };
