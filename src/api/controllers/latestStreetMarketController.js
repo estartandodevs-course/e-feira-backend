@@ -2,6 +2,7 @@ const database = require("../models");
 const response = require("../mappers/latestStreetMarketResponse");
 class LatestStreetMarketController {
 	static async GetAllProductsFromtheHomePage(req, res) {
+		const { id } = req.params;
 		try {
 			const dataProvider1 = await database.Providers.findOne({
 				where: { id: 1 },
