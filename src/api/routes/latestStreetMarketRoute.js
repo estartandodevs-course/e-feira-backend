@@ -4,7 +4,7 @@ const LatestStreetMarketController = require("../controllers/latestStreetMarketC
 const router = Router();
 
 router.get(
-	"/api/home/latest-streetMarket",
+	"/api/home/street-market-latest",
 	LatestStreetMarketController.GetAllProductsFromtheHomePage
 );
 

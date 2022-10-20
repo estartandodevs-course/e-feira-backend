@@ -3,7 +3,18 @@ const database = require("../models");
 class ProductController {
 	static async GetAllProducts(req, res) {
 		try {
-			const allProducts = await database.Products.findAll();
+			const allProducts = await database.Products.findAll({
+				attributes: [
+					["id", "id"],
+					["name", "name"],
+					["photo_url", "image"],
+					["product_weight", "subtitle"],
+					["type_frontend_attribute", "type"],
+					["alt_frontend_attribute", "alt"],
+					["price", "price"],
+					["provider_id", "provider_id"],
+				],
+			});
 			return res.status(200).json(allProducts);
 		} catch (error) {
 			return res.status(500).json(error.message);
@@ -27,6 +38,7 @@ class ProductController {
 				],
 				where: { id: Number(id) },
 			});
+			console.log(products.provider_id.getProviders());
 			const provider = await database.Providers.findOne({
 				where: { id: Number(products.provider_id) },
 			});
@@ -93,13 +105,12 @@ class ProductController {
 			return res.status(500).json(error.message);
 		}
 	}
-	//wip
 	static async GetProductsFromName(req, res) {
-		const { Op } = require("sequelize");
 		const { name } = req.query;
+
 		try {
 			const product = await database.Products.findAll({
-				name: { [Op.like]: { name } },
+				where: { name: name },
 			});
 			return res.status(200).json(product);
 		} catch (error) {
