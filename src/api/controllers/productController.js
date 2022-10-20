@@ -38,7 +38,6 @@ class ProductController {
 				],
 				where: { id: Number(id) },
 			});
-			console.log(products.provider_id.getProviders());
 			const provider = await database.Providers.findOne({
 				where: { id: Number(products.provider_id) },
 			});
@@ -86,6 +85,15 @@ class ProductController {
 		const { provider_id } = req.params;
 		try {
 			const allProductsOfProvider = await database.Products.findAll({
+				attributes: [
+					["id", "id"],
+					["name", "name"],
+					["photo_url", "image"],
+					["type_frontend_attribute", "type"],
+					["alt_frontend_attribute", "alt"],
+					["product_weight", "subtitle"],
+					["price", "price"],
+				],
 				where: { provider_id: Number(provider_id) },
 			});
 			return res.status(200).json(allProductsOfProvider);
@@ -98,6 +106,15 @@ class ProductController {
 		const { category_id } = req.params;
 		try {
 			const allProductsOfCategory = await database.Products.findAll({
+				attributes: [
+					["id", "id"],
+					["name", "name"],
+					["photo_url", "image"],
+					["type_frontend_attribute", "type"],
+					["alt_frontend_attribute", "alt"],
+					["product_weight", "subtitle"],
+					["price", "price"],
+				],
 				where: { category_id: Number(category_id) },
 			});
 			return res.status(200).json(allProductsOfCategory);

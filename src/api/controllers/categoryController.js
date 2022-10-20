@@ -21,6 +21,13 @@ class CategoryController {
 		const { id } = req.params;
 		try {
 			const oneCategory = await database.Categories.findOne({
+				attributes: [
+					["id", "id"],
+					["name", "name"],
+					["photo_url", "image"],
+					["type_frontend_attribute", "type"],
+					["alt_frontend_attribute", "alt"],
+				],
 				where: { id: Number(id) },
 			});
 			return res.status(200).json(oneCategory);

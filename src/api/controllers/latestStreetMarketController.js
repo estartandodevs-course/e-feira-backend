@@ -17,6 +17,7 @@ class LatestStreetMarketController {
 					["type_frontend_attribute", "type"],
 					["alt_frontend_attribute", "alt"],
 					["product_weight", "subtitle"],
+					["price", "price"],
 				],
 				where: { provider_id: 1 },
 				limit: 5,
@@ -29,6 +30,7 @@ class LatestStreetMarketController {
 					["type_frontend_attribute", "type"],
 					["alt_frontend_attribute", "alt"],
 					["product_weight", "subtitle"],
+					["price", "price"],
 				],
 				where: { provider_id: 2 },
 			});
