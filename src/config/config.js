@@ -1,34 +1,30 @@
 require("dotenv").config();
 
+const isDbSSL = process.env.DB_SSL === "true" ?? false;
+
+const sslConfig = {
+	dialectOptions: {
+		ssl: true,
+	},
+};
+
+const connectionData = {
+	username: process.env.DB_USER,
+	password: process.env.DB_PASS,
+	database: process.env.DB_NAME,
+	host: process.env.DB_HOST,
+	dialect: process.env.DB_DIALECT,
+	...(isDbSSL ? sslConfig : {}),
+};
+
 module.exports = {
 	development: {
-		username: process.env.DB_USER,
-		password: process.env.DB_PASS,
-		database: process.env.DB_NAME,
-		host: process.env.DB_HOST,
-		dialect: process.env.DB_DIALECT,
-		dialectOptions: {
-			ssl: process.env.DB_SSL,
-		},
+		...connectionData,
 	},
 	test: {
-		username: process.env.DB_USER,
-		password: process.env.DB_PASS,
-		database: process.env.DB_NAME,
-		host: process.env.DB_HOST,
-		dialect: process.env.DB_DIALECT,
-		dialectOptions: {
-			ssl: process.env.DB_SSL,
-		},
+		...connectionData,
 	},
 	production: {
-		username: process.env.DB_USER,
-		password: process.env.DB_PASS,
-		database: process.env.DB_NAME,
-		host: process.env.DB_HOST,
-		dialect: process.env.DB_DIALECT,
-		dialectOptions: {
-			ssl: process.env.DB_SSL,
-		},
+		...connectionData,
 	},
 };
