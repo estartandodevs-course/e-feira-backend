@@ -6,7 +6,7 @@ const router = Router();
 router.get("/api/providers", ProviderController.GetAllProviders);
 router.get("/api/providers/:id", ProviderController.GetOneProvider);
 router.get(
-	"/api/products/provider-page/:id",
+	"/api/provider-page/:id",
 	ProviderController.GetAProviderandTheirProducts
 );
 router.post("/api/providers", ProviderController.CreateAProvider);
