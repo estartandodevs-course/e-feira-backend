@@ -14,6 +14,9 @@ module.exports = (sequelize, DataTypes) => {
 				Products.belongsTo(models.Providers, {
 					foreignKey: "provider_id",
 				});
+			Products.hasOne(models.Order_itens, {
+				foreignKey: "product_id",
+			});
 		}
 	}
 	Products.init(
