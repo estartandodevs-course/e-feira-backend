@@ -9,6 +9,9 @@ module.exports = {
 				primaryKey: true,
 				type: Sequelize.INTEGER,
 			},
+			address: {
+				type: Sequelize.STRING,
+			},
 			payment_method: {
 				type: Sequelize.STRING,
 			},

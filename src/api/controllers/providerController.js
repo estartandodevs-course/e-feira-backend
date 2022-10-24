@@ -13,6 +13,7 @@ class ProviderController {
 					["phone_number2", "phone_number2"],
 				],
 			});
+
 			return res.status(200).json(allProviders);
 		} catch (error) {
 			return res.status(500).json(error.message);
