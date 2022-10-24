@@ -6,6 +6,7 @@ const highlights = require("./api/routes/highlightRoute.js");
 const category = require("./api/routes/categoryRoute.js");
 const streetMarket = require("./api/routes/latestStreetMarketRoute.js");
 const user = require("./api/routes/userRoute.js");
+const order = require("./api/routes/orderRoute.js");
 
 const bodyParser = require("body-parser");
 const express = require("express");
@@ -14,7 +15,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(products, providers, highlights, category, streetMarket, user);
+app.use(products, providers, highlights, category, streetMarket, user, order);
 app.get("/api", (req, res) => {
 	res.status(200).send({
 		message: "Hi! Welcome to the API",
