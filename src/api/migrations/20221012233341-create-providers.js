@@ -1,4 +1,7 @@
 "use strict";
+
+const { BOOLEAN } = require('sequelize');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
 	async up(queryInterface, Sequelize) {
@@ -23,6 +26,9 @@ module.exports = {
 			},
 			phone_number2: {
 				type: Sequelize.STRING,
+			},
+			provider_highlight: {
+				type: Sequelize.BOOLEAN,
 			},
 			createdAt: {
 				allowNull: false,
