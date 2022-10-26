@@ -11,11 +11,12 @@ module.exports = (sequelize, DataTypes) => {
 			Products.belongsTo(models.Categories, {
 				foreignKey: "category_id",
 			}),
-				Products.belongsTo(models.Providers, {
-					foreignKey: "provider_id",
-				});
-			Products.hasOne(models.Order_itens, {
-				foreignKey: "product_id",
+			Products.belongsTo(models.Providers, {
+				foreignKey: "provider_id",
+			});
+			Products.belongsToMany(models.Orders, {
+				through: "Order_itens",
+				uniqueKey: "order_id",
 			});
 		}
 	}

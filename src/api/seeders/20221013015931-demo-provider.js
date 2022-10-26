@@ -19,10 +19,12 @@ module.exports = {
 				},
 				{
 					name: "Raizs Orgânicos",
-					photo_url: "",
-					description: "",
-					phone_number1: "",
-					phone_number2: "",
+					photo_url:
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1666143970/providers/raizs_organicas.png",
+					description:
+						"A Raízs é a primeira e maior empresa a conectar o pequeno produtor de orgânicos à mesa dos grandes centros urbanos.",
+					phone_number1: "11 95896-5215",
+					phone_number2: "11 94567-4356",
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},

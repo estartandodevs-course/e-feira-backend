@@ -15,6 +15,9 @@ module.exports = {
 			payment_method: {
 				type: Sequelize.STRING,
 			},
+			total_price: {
+				type: Sequelize.FLOAT,
+			},
 			user_id: {
 				allowNull: false,
 				type: Sequelize.INTEGER,

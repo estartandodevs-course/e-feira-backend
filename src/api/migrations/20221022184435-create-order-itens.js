@@ -9,16 +9,21 @@ module.exports = {
 				primaryKey: true,
 				type: Sequelize.INTEGER,
 			},
-			individual_value: {
-				type: Sequelize.FLOAT,
-			},
-			amount_purchased: {
+			amount: {
 				type: Sequelize.INTEGER,
+			},
+			individual_price: {
+				type: Sequelize.FLOAT,
 			},
 			product_id: {
 				allowNull: false,
 				type: Sequelize.INTEGER,
 				references: { model: "Products", key: "id" },
+			},
+			order_id: {
+				allowNull: false,
+				type: Sequelize.INTEGER,
+				references: { model: "Orders", key: "id" },
 			},
 			createdAt: {
 				allowNull: false,

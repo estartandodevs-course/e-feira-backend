@@ -1,21 +1,22 @@
 const database = require("../models");
 const request = require("../mappers/orderRequest");
 
-const error = ` 
+const error = (err) => ` 
 {
     status: 500,
-    message: failure,
+    message: ${err.message},
 }`;
 
 const success = ` 
 {
-    status: 200,
+	status: 200,
     message: success,
-}`;
+}
+`;
 class OrderController {
 	static async GetOrders(req, res) {
 		try {
-			const allOrders = await database.Order_itens.findAll();
+			const allOrders = await database.Orders.findAll();
 			return res.status(200).json(allOrders);
 		} catch (error) {
 			res.status(500).send(error.message);
@@ -23,48 +24,32 @@ class OrderController {
 	}
 
 	static async PostAnOrder(req, res) {
+		const order = req.body;
 		const order_itens = req.body;
 		const { userId } = req.params;
 		try {
 			const [user, created] = await database.Users.findOrCreate({
 				where: { id: Number(userId) },
-				//defaults will be changed to req.body
 				defaults: {
-					name: "Ned",
-					surname: "Stark",
+					name: "John",
+					surname: "Doe",
 				},
 			});
-			//implement bulk create
-			const itens = await database.Order_itens.create(order_itens);
 
-			const theItem = await database.Order_itens.findOne({
-				attributes: [
-					["amount_purchased", "amount_purchased"],
-					["product_id", "product_id"],
-				],
-				where: { id: itens.id },
-			});
+			const createOrder = await database.Orders.create(order);
+			
+			/*
 
-			const products = await database.Products.findOne({
-				attributes: [
-					["id", "id"],
-					["name", "name"],
-					["price", "price"],
-					["provider_id", "provider_id"],
-				],
-				where: { id: theItem.product_id },
-			});
-
-			const provider = await database.Providers.findOne({
-				attributes: [["id", "id"]],
-				where: { id: products.provider_id },
-			});
-
-			return res
-				.status(200)
-				.json(request(theItem, user, products, provider));
-		} catch (error) {
-			res.status(500).send(error.message);
+			const createItens = await database.Order_itens.bulkCreate(
+				order_itens.map((item) => ({
+					item,
+					order_id: Number(createOrder.id),
+				}))
+			);
+			*/
+			return res.status(200).json(success);
+		} catch (err) {
+			res.status(500).send(error(err));
 		}
 	}
 	static async UpdateAnOrder(req, res) {
