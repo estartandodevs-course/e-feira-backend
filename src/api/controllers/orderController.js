@@ -23,8 +23,8 @@ class OrderController {
 	}
 
 	static async PostAnOrder(req, res) {
-		const order = req.body;
-		const order_itens = req.body;
+		const { order } = req.body[0];
+		const { order_itens } = req.body[1];
 		const { userid, name, surname } = req.headers;
 		try {
 			const [user, created] = await database.Users.findOrCreate({
@@ -34,6 +34,7 @@ class OrderController {
 					surname: surname,
 				},
 			});
+			console.log(order);
 
 			database.Orders.beforeCreate(async (order, options) => {
 				const userId = await user.id;
@@ -42,16 +43,10 @@ class OrderController {
 
 			const createOrder = await database.Orders.create(order);
 
-			/*
-			database.Order_itens.beforeBulkCreate(async (order, options) => {
-				const orderId = await createOrder.id;
-				order.order_id = orderId;
-			});
-
 			const createItens = await database.Order_itens.bulkCreate(
 				order_itens
-			);
-*/
+				);
+
 			return res.status(200).json(success);
 		} catch (err) {
 			res.status(500).send(error(err));

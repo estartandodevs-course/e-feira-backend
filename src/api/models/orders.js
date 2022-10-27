@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
 			});
 			Orders.belongsToMany(models.Products, {
 				through: "Order_itens",
-				uniqueKey: "order_id",
+				foreignKey: "order_id",
 			});
 		}
 	}
@@ -22,6 +22,8 @@ module.exports = (sequelize, DataTypes) => {
 			address: DataTypes.STRING,
 			payment_method: DataTypes.STRING,
 			total_price: DataTypes.FLOAT,
+			change: DataTypes.FLOAT,
+			delivery_tax: DataTypes.FLOAT,
 		},
 		{
 			sequelize,

@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
 				});
 			Products.belongsToMany(models.Orders, {
 				through: "Order_itens",
-				uniqueKey: "order_id",
+				foreignKey: "product_id",
 			});
 		}
 	}

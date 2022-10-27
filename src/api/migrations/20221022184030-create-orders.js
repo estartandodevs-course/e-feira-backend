@@ -18,6 +18,12 @@ module.exports = {
 			total_price: {
 				type: Sequelize.FLOAT,
 			},
+			change: {
+				type: Sequelize.FLOAT,
+			},
+			delivery_tax: {
+				type: Sequelize.FLOAT,
+			},
 			user_id: {
 				allowNull: false,
 				type: Sequelize.INTEGER,
