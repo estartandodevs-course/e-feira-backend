@@ -22,10 +22,10 @@ class LatestStreetMarketController {
 
 			const products = await database.Products.findAll({
 				where: { provider_id : providerIds},
-				limit: 5,
+				//limit 5 for each
 			}); 
-
-			const streetMarket = dataProvider.map((providers) => response(providers, products));
+            
+			const streetMarket = dataProvider.map((providers) => response(providers, products.filter((data => data.provider_id === providers.id))));
 
 			return res
 				.status(200)
