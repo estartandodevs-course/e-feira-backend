@@ -11,25 +11,45 @@ class LatestStreetMarketController {
 					["photo_url", "photo_url"],
 					["description", "description"],
 					["phone_number1", "phone_number1"],
-					["phone_number2", "phone_number2"]
+					["phone_number2", "phone_number2"],
 				],
-				where: {provider_highlight: true},
+				where: { provider_highlight: true },
 				limit: 2,
-				order: Sequelize.literal("random()")
+				order: Sequelize.literal("random()"),
 			});
-          
+
 			const providerIds = dataProvider.map((data) => data.id);
 
 			const products = await database.Products.findAll({
-				where: { provider_id : providerIds},
-				//limit 5 for each
-			}); 
-            
-			const streetMarket = dataProvider.map((providers) => response(providers, products.filter((data => data.provider_id === providers.id))));
+				where: { provider_id: providerIds },
+				
+				/*
+				attributes: {
+					include: [
+						[
+							Sequelize.literal(`(
+                    SELECT 
+					name,
+                    ROW_NUMBER () OVER (
+						PARTITION BY provider_id
+						ORDER BY id
+						FROM Products;
+					 )
+                )`),
+						],
+					],
+				},
+				*/
+			});
+			
+			const streetMarket = dataProvider.map((providers) =>
+				response(
+					providers,
+					products.filter((data) => data.provider_id === providers.id)
+				)
+			);
 
-			return res
-				.status(200)
-				.json(streetMarket);
+			return res.status(200).json(streetMarket);
 		} catch (error) {
 			return res.status(500).json(error.message);
 		}

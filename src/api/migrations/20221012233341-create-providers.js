@@ -1,6 +1,6 @@
 "use strict";
 
-const { BOOLEAN } = require('sequelize');
+const { BOOLEAN } = require("sequelize");
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
