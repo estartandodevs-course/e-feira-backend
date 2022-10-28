@@ -34,7 +34,6 @@ class OrderController {
 					surname: surname,
 				},
 			});
-			console.log(order);
 
 			database.Orders.beforeCreate(async (order, options) => {
 				const userId = await user.id;
@@ -43,9 +42,14 @@ class OrderController {
 
 			const createOrder = await database.Orders.create(order);
 
+			database.Order_itens.beforeBulkCreate(async (order, options) => {
+				const orderId = await createOrder.id;
+				order.map((item) => (item.order_id = orderId));
+			});
+
 			const createItens = await database.Order_itens.bulkCreate(
 				order_itens
-				);
+			);
 
 			return res.status(200).json(success);
 		} catch (err) {
