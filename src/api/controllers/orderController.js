@@ -57,7 +57,7 @@ class OrderController {
 		}
 	}
 
-	static async UpdateAnOrder(req, res) {
+	static async UpdateAnOrderItem(req, res) {
 		const { id } = req.params;
 		const order = req.body;
 		try {
@@ -68,6 +68,39 @@ class OrderController {
 				where: { id: Number(id) },
 			});
 			return res.status(200).json(orders);
+		} catch (error) {
+			return res.status(500).json(error.message);
+		}
+	}
+	static async UpdateAnOrder(req, res) {
+		const { id } = req.params;
+		const updatedOrder = req.body;
+		try {
+			await database.Orders.update(updatedOrder, {
+				where: { id: Number(id) },
+			});
+			const order = await database.Orders.findOne({
+				where: { id: Number(id) },
+			});
+			return res.status(200).json(order);
+		} catch (error) {
+			return res.status(500).json(error.message);
+		}
+	}
+	static async DeleteAnOrderItem(req, res) {
+		const { id } = req.params;
+		try {
+			await database.Order_itens.destroy({ where: { id: Number(id) } });
+			return res.status(200).json("Order item deleted with success!");
+		} catch (error) {
+			return res.status(500).json(error.message);
+		}
+	}
+	static async DeleteAnOrder(req, res) {
+		const { id } = req.params;
+		try {
+			await database.Orders.destroy({ where: { id: Number(id) } });
+			return res.status(200).json("Order deleted with success!");
 		} catch (error) {
 			return res.status(500).json(error.message);
 		}
