@@ -13,6 +13,7 @@ class ProductController {
 					["alt_frontend_attribute", "alt"],
 					["price", "price"],
 					["provider_id", "provider_id"],
+					["category_id", "category_id"],
 				],
 			});
 			return res.status(200).json(allProducts);
@@ -35,6 +36,7 @@ class ProductController {
 					["alt_frontend_attribute", "alt"],
 					["price", "price"],
 					["provider_id", "provider_id"],
+					["category_id", "category_id"],
 				],
 				where: { id: Number(id) },
 			});
@@ -93,6 +95,7 @@ class ProductController {
 					["alt_frontend_attribute", "alt"],
 					["product_weight", "subtitle"],
 					["price", "price"],
+					["category_id", "category_id"],
 				],
 				where: { provider_id: Number(provider_id) },
 			});
@@ -114,6 +117,7 @@ class ProductController {
 					["alt_frontend_attribute", "alt"],
 					["product_weight", "subtitle"],
 					["price", "price"],
+					["provider_id", "provider_id"],
 				],
 				where: { category_id: Number(category_id) },
 			});
