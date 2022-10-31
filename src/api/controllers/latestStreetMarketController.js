@@ -20,6 +20,7 @@ class LatestStreetMarketController {
 					["price", "price"],
 				],
 				where: { provider_id: 1 },
+				order: [["id", "ASC"]],
 				limit: 5,
 			});
 			const allProductsOfProvider2 = await database.Products.findAll({
@@ -33,6 +34,8 @@ class LatestStreetMarketController {
 					["price", "price"],
 				],
 				where: { provider_id: 2 },
+				order: [["id", "ASC"]],
+				limit: 5,
 			});
 			return res
 				.status(200)

@@ -28,6 +28,39 @@ module.exports = {
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
+				{
+					name: "Banca da Ana Maria",
+					photo_url:
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667155746/providers/banca-ana-maria.png",
+					description:
+						"Aliquam a vulputate risus. Etiam in mattis dolor, ut lobortis lectus. Pellentesque porta tortor a scelerisque pretium. Integer tempus justo.",
+					phone_number1: "11 93839-7448",
+					phone_number2: "11 93522-2343",
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
+				{
+					name: "Granja da Janja",
+					photo_url:
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667155746/providers/granja-da-janja.png",
+					description:
+						"Pellentesque pharetra metus sit amet purus gravida dictum. Suspendisse nec tempus lacus. Suspendisse a molestie libero. Proin sodales eget arcu.",
+					phone_number1: "11 93840-1743",
+					phone_number2: "11 92405-8145",
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
+				{
+					name: "Sto Inácio Leite, Queijo & CIA",
+					photo_url:
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667155746/providers/sto-inacio.png",
+					description:
+						"Pellentesque eu sagittis est. Nam consequat, lectus non maximus commodo, nisi ex lobortis sem, eu cursus lectus augue vitae orci.",
+					phone_number1: "11 92774-8185",
+					phone_number2: "11 93737-7488",
+					createdAt: new Date(),
+					updatedAt: new Date(),
+				},
 			],
 			{}
 		);

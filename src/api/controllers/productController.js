@@ -15,6 +15,7 @@ class ProductController {
 					["provider_id", "provider_id"],
 					["category_id", "category_id"],
 				],
+				order: [["id", "ASC"]],
 			});
 			return res.status(200).json(allProducts);
 		} catch (error) {
