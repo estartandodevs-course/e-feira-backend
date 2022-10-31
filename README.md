@@ -14,6 +14,5 @@
 -   [Todas as frutas - GET](https://e-feira-backend.onrender.com/api/products/category/1)
 -   [Todos os legumes - GET](https://e-feira-backend.onrender.com/api/products/category/2)
 -   [Todas as verduras - GET](https://e-feira-backend.onrender.com/api/products/category/3)
--   [Todas as frutas - GET](https://e-feira-backend.onrender.com/api/products/category/1)
 -   [Todas as carnes - GET](https://e-feira-backend.onrender.com/api/products/category/5)
 -   [Todos os laticínios - GET](https://e-feira-backend.onrender.com/api/products/category/6)
