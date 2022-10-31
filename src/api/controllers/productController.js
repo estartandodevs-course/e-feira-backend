@@ -99,6 +99,7 @@ class ProductController {
 					["category_id", "category_id"],
 				],
 				where: { provider_id: Number(provider_id) },
+				order: [["id", "ASC"]],
 			});
 			return res.status(200).json(allProductsOfProvider);
 		} catch (error) {
@@ -121,6 +122,7 @@ class ProductController {
 					["provider_id", "provider_id"],
 				],
 				where: { category_id: Number(category_id) },
+				order: [["id", "ASC"]],
 			});
 			return res.status(200).json(allProductsOfCategory);
 		} catch (error) {
