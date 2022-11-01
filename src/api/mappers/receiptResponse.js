@@ -1,7 +1,7 @@
 const request = (order, order_itens, user, product, provider) => [
 	{
 		Cliente: {
-			Nome: `${user.name} ${user.surname}`
+			id: order.user_id,
 		},
 	},
 	{
@@ -10,10 +10,14 @@ const request = (order, order_itens, user, product, provider) => [
 			Pagamento: order.payment_method,
 			Total: order.total_price,
 			Troco: order.change,
-			Entrega: order.delivery_tax
-		}
+			Entrega: order.delivery_tax,
+		},
+	},
+	{
+		Fornecedor: {
+			id: order.provider_id,
+		},
 	},
 ];
-	
 
 module.exports = request;
