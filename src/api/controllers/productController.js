@@ -131,10 +131,23 @@ class ProductController {
 	}
 	static async GetProductsFromName(req, res) {
 		const { name } = req.query;
-
+		const { Op } = require("sequelize");
 		try {
 			const product = await database.Products.findAll({
-				where: { name: name },
+				where: { name: {
+					[Op.iLike]: `%${name}%`
+				}},
+				attributes: [
+					["id","id"],
+					["name","name"],
+					["photo_url","image"],
+					["product_weight","subtitle"],
+					["type_frontend_attribute","type"],
+					["alt_frontend_attribute","alt"],
+					["price","price"],
+					["provider_id","provider_id"],
+					["category_id","category_id"],
+				]
 			});
 			return res.status(200).json(product);
 		} catch (error) {
