@@ -22,7 +22,7 @@ class LatestStreetMarketController {
 
 			const products = await database.Products.findAll({
 				where: { provider_id: providerIds },
-				
+				order: [["id", "ASC"]],
 				/*
 				attributes: {
 					include: [
