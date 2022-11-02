@@ -152,7 +152,7 @@ class ProductController {
 					["provider_id","provider_id"],
 					["category_id","category_id"],
 					["weight","weight"],
-				]
+				],
 			});
 			return res.status(200).json(product);
 		} catch (error) {
