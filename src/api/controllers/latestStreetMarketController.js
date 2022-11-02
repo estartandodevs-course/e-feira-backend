@@ -1,5 +1,5 @@
 const database = require("../models");
-const response = require("../mappers/latestStreetMarketResponse");
+const providerResponse = require("../mappers/latestStreetMarketResponse");
 const Sequelize = require("sequelize");
 class LatestStreetMarketController {
 	static async GetAllProductsFromtheHomePage(req, res) {
@@ -18,38 +18,27 @@ class LatestStreetMarketController {
 				order: Sequelize.literal("random()"),
 			});
 
-			const providerIds = dataProvider.map((data) => data.id);
+			const productsGroups = [];
 
-			const products = await database.Products.findAll({
-				where: { provider_id: providerIds },
-				order: [["id", "ASC"]],
-				/*
-				attributes: {
-					include: [
-						[
-							Sequelize.literal(`(
-                    SELECT 
-					name,
-                    ROW_NUMBER () OVER (
-						PARTITION BY provider_id
-						ORDER BY id
-						FROM Products;
-					 )
-                )`),
-						],
-					],
-				},
-				*/
-			});
-			
-			const streetMarket = dataProvider.map((providers) =>
-				response(
-					providers,
-					products.filter((data) => data.provider_id === providers.id)
-				)
-			);
+			for (let i = 0; i < dataProvider.length; i++) {
+				const provider = dataProvider[i];
+				const providerId = provider.id;
 
-			return res.status(200).json(streetMarket);
+				const products = await database.Products.findAll({
+					where: { provider_id: providerId },
+					order: [["id", "ASC"]],
+					limit: 5,
+				});
+
+				const providerResource = providerResponse(provider.dataValues);
+
+				productsGroups.push({
+					...providerResource,
+					products,
+				});
+			}
+
+			return res.status(200).json(productsGroups);
 		} catch (error) {
 			return res.status(500).json(error.message);
 		}
