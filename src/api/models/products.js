@@ -14,6 +14,10 @@ module.exports = (sequelize, DataTypes) => {
 				Products.belongsTo(models.Providers, {
 					foreignKey: "provider_id",
 				});
+			Products.belongsToMany(models.Orders, {
+				through: "Order_itens",
+				foreignKey: "product_id",
+			});
 		}
 	}
 	Products.init(
@@ -24,6 +28,7 @@ module.exports = (sequelize, DataTypes) => {
 			alt_frontend_attribute: DataTypes.STRING,
 			product_weight: DataTypes.STRING,
 			price: DataTypes.FLOAT,
+			weight: DataTypes.STRING,
 		},
 		{
 			sequelize,

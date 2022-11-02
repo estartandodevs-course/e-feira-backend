@@ -13,6 +13,7 @@ class ProviderController {
 					["phone_number2", "phone_number2"],
 				],
 			});
+
 			return res.status(200).json(allProviders);
 		} catch (error) {
 			return res.status(500).json(error.message);
@@ -86,6 +87,7 @@ class ProviderController {
 					["alt_frontend_attribute", "alt"],
 					["product_weight", "subtitle"],
 					["price", "price"],
+					["weight", "weight"],
 				],
 				where: { provider_id: Number(id) },
 			});

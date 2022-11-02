@@ -1,23 +1,47 @@
 {
 	"_type": "export",
 	"__export_format": 4,
-	"__export_date": "2022-10-20T22:23:41.594Z",
+	"__export_date": "2022-10-29T13:15:16.548Z",
 	"__export_source": "insomnia.desktop.app:v2022.5.0",
 	"resources": [
 		{
-			"_id": "req_5e208a9ae2774cad9b0aca3b707ea620",
+			"_id": "req_54c50f3b78ee42859db1ae95c1831fd4",
 			"parentId": "wrk_de00f4f34a194f939c8dde41aa7e5f3b",
-			"modified": 1666304129768,
-			"created": 1666152081598,
-			"url": "{{ _.url }}/products/3",
-			"name": "products/:id",
+			"modified": 1667049287187,
+			"created": 1666567548071,
+			"url": "{{ _.url }}/orders",
+			"name": "post order",
 			"description": "",
-			"method": "GET",
-			"body": {},
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "[\n\t{\n\t\t\"order\":{\n         \"address\":\"Rua do Gato, 554\",\n         \"payment_method\":\"Dinheiro\",\n         \"total_price\":40,\n\t\t\t   \"change\": 5,\n\t\t\t   \"delivery_tax\": 5\n}\n\t},\n\t{\n\t\"order_itens\":[\n\t{\n\t\t\"amount\": 2,\n\t\t\"individual_price\": 10,\n\t\t\"product_id\": 7\n\t},\n\t{\n\t\t\"amount\": 4,\n\t\t\"individual_price\": 5,\n\t\t\"product_id\": 8\n\t}\n\t]\n\t}\n\t]\n  "
+			},
 			"parameters": [],
-			"headers": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_e444099d317b47e4ad9384050b6295c2"
+				},
+				{
+					"name": "userId",
+					"value": "1",
+					"id": "pair_8c72632785854f8e956fc15bf72a5f15"
+				},
+				{
+					"name": "name",
+					"value": "",
+					"id": "pair_881c9d83fa3446d68ecbded2c7795140"
+				},
+				{
+					"name": "surname",
+					"value": "",
+					"id": "pair_a9d9bbb2288f4136af5db775f18db9cc"
+				}
+			],
 			"authentication": {},
-			"metaSortKey": -1666152081600,
+			"metaSortKey": -1666567548071,
 			"isPrivate": false,
 			"settingStoreCookies": true,
 			"settingSendCookies": true,
@@ -38,11 +62,43 @@
 			"_type": "workspace"
 		},
 		{
+			"_id": "req_5e208a9ae2774cad9b0aca3b707ea620",
+			"parentId": "wrk_de00f4f34a194f939c8dde41aa7e5f3b",
+			"modified": 1666807806941,
+			"created": 1666152081598,
+			"url": "{{ _.url }}/products/13",
+			"name": "products/:id",
+			"description": "",
+			"method": "GET",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\t\"price\": 11.5\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_2354d22ef0494819b78f86cf8e6752f8"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1666152081600,
+			"isPrivate": false,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingFollowRedirects": "global",
+			"_type": "request"
+		},
+		{
 			"_id": "req_bf081167f445433685c463a32ef1e123",
 			"parentId": "wrk_de00f4f34a194f939c8dde41aa7e5f3b",
-			"modified": 1666148953401,
+			"modified": 1666807792910,
 			"created": 1666035239827,
-			"url": "{{ _.url }}/products/provider-page/2",
+			"url": "{{ _.url }}/provider-page/2",
 			"name": "/products/provider-page/2",
 			"description": "",
 			"method": "GET",

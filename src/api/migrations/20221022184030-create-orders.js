@@ -2,43 +2,32 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
 	async up(queryInterface, Sequelize) {
-		await queryInterface.createTable("Products", {
+		await queryInterface.createTable("Orders", {
 			id: {
 				allowNull: false,
 				autoIncrement: true,
 				primaryKey: true,
 				type: Sequelize.INTEGER,
 			},
-			name: {
+			address: {
 				type: Sequelize.STRING,
 			},
-			photo_url: {
+			payment_method: {
 				type: Sequelize.STRING,
 			},
-			type_frontend_attribute: {
-				type: Sequelize.STRING,
-			},
-			alt_frontend_attribute: {
-				type: Sequelize.STRING,
-			},
-			product_weight: {
-				type: Sequelize.STRING,
-			},
-			price: {
+			total_price: {
 				type: Sequelize.FLOAT,
 			},
-			weight: {
-				type: Sequelize.STRING,
+			change: {
+				type: Sequelize.FLOAT,
 			},
-			provider_id: {
+			delivery_tax: {
+				type: Sequelize.FLOAT,
+			},
+			user_id: {
 				allowNull: false,
 				type: Sequelize.INTEGER,
-				references: { model: "Providers", key: "id" },
-			},
-			category_id: {
-				allowNull: false,
-				type: Sequelize.INTEGER,
-				references: { model: "Categories", key: "id" },
+				references: { model: "Users", key: "id" },
 			},
 			createdAt: {
 				allowNull: false,
@@ -51,6 +40,6 @@ module.exports = {
 		});
 	},
 	async down(queryInterface, Sequelize) {
-		await queryInterface.dropTable("Products");
+		await queryInterface.dropTable("Orders");
 	},
 };

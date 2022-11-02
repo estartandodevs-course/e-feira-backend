@@ -4,6 +4,7 @@ const Sequelize = require("sequelize");
 class LatestStreetMarketController {
 	static async GetAllProductsFromtheHomePage(req, res) {
 		try {
+
 			const dataProvider = await database.Providers.findAll({
 				attributes: [
 					["id", "id"],
@@ -16,7 +17,6 @@ class LatestStreetMarketController {
 				where: { provider_highlight: true },
 				limit: 2,
 				order: Sequelize.literal("random()"),
-			});
 
 			const productsGroups = [];
 
