@@ -14,6 +14,7 @@ class ProductController {
 					["price", "price"],
 					["provider_id", "provider_id"],
 					["category_id", "category_id"],
+					["weight","weight"],
 				],
 				order: [["id", "ASC"]],
 			});
@@ -38,6 +39,7 @@ class ProductController {
 					["price", "price"],
 					["provider_id", "provider_id"],
 					["category_id", "category_id"],
+					["weight","weight"],
 				],
 				where: { id: Number(id) },
 			});
@@ -97,6 +99,7 @@ class ProductController {
 					["product_weight", "subtitle"],
 					["price", "price"],
 					["category_id", "category_id"],
+					["weight","weight"],
 				],
 				where: { provider_id: Number(provider_id) },
 				order: [["id", "ASC"]],
@@ -120,6 +123,7 @@ class ProductController {
 					["product_weight", "subtitle"],
 					["price", "price"],
 					["provider_id", "provider_id"],
+					["weight","weight"],
 				],
 				where: { category_id: Number(category_id) },
 				order: [["id", "ASC"]],
@@ -147,6 +151,7 @@ class ProductController {
 					["price","price"],
 					["provider_id","provider_id"],
 					["category_id","category_id"],
+					["weight","weight"],
 				]
 			});
 			return res.status(200).json(product);
