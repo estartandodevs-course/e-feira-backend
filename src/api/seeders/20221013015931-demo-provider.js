@@ -26,7 +26,7 @@ module.exports = {
 						"A Raízs é a primeira e maior empresa a conectar o pequeno produtor de orgânicos à mesa dos grandes centros urbanos.",
 					phone_number1: "11 95896-5215",
 					phone_number2: "11 94567-4356",
-          provider_highlight: true,
+					provider_highlight: true,
 					createdAt: new Date(),
 					updatedAt: new Date(),
 				},
