@@ -87,7 +87,7 @@ class ProviderController {
 					["alt_frontend_attribute", "alt"],
 					["product_weight", "subtitle"],
 					["price", "price"],
-					["weight","weight"],
+					["weight", "weight"],
 				],
 				where: { provider_id: Number(id) },
 			});
