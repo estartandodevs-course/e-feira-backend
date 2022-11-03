@@ -34,8 +34,6 @@ class LatestStreetMarketController {
 						["product_weight", "subtitle"],
 						["price", "price"],
 						["weight", "weight"],
-						["category_id", "category_id"],
-						["provider_id", "provider_id"],
 					],
 					where: { provider_id: providerId },
 					order: [["id", "ASC"]],
