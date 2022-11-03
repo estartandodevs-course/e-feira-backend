@@ -15,7 +15,7 @@ class LatestStreetMarketController {
 				],
 				where: { provider_highlight: true },
 				limit: 2,
-				order: Sequelize.literal("random()"),
+				order: [["id", "ASC"]],
 			});
 
 			const productsGroups = [];
