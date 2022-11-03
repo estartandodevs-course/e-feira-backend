@@ -32,7 +32,7 @@ class ReceiptController {
 							["id", "Id do Produto"],
 							["name", "Nome"],
 							["type_frontend_attribute", "Categoria"],
-							["product_weight", "Peso do Produto"],
+							["weight", "Peso do Produto"],
 							["provider_id", "Id do Fornecedor"],
 						],
 						through: {
