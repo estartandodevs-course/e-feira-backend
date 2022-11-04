@@ -5,9 +5,6 @@ class ReceiptController {
 		const { Op } = require("sequelize");
 		const { orderId } = req.params;
 		try {
-			const allOrders = await database.Orders.findAll({
-				include: database.Users,
-			});
 			const allItens = await database.Orders.findOne({
 				attributes: [
 					["id", "Id do Pedido"],
