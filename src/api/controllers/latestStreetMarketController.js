@@ -1,5 +1,6 @@
 const database = require("../models");
-const response = require("../mappers/latestStreetMarketResponse");
+const providerResponse = require("../mappers/latestStreetMarketResponse");
+const Sequelize = require("sequelize");
 class LatestStreetMarketController {
 	static async GetAllProductsFromtheHomePage(req, res) {
 		try {
@@ -18,6 +19,7 @@ class LatestStreetMarketController {
 					["alt_frontend_attribute", "alt"],
 					["product_weight", "subtitle"],
 					["price", "price"],
+					["weight", "weight"],
 				],
 				where: { provider_id: 1 },
 				order: [["id", "ASC"]],
@@ -32,6 +34,7 @@ class LatestStreetMarketController {
 					["alt_frontend_attribute", "alt"],
 					["product_weight", "subtitle"],
 					["price", "price"],
+					["weight", "weight"],
 				],
 				where: { provider_id: 2 },
 				order: [["id", "ASC"]],
@@ -40,7 +43,7 @@ class LatestStreetMarketController {
 			return res
 				.status(200)
 				.json(
-					response(
+					providerResponse(
 						dataProvider1,
 						dataProvider2,
 						allProductsOfProvider1,

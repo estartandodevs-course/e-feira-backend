@@ -16,5 +16,4 @@ const response = (provider1, provider2, products1, products2) => [
 		products: [products2],
 	},
 ];
-
 module.exports = response;

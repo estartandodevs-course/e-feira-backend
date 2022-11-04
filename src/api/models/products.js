@@ -28,6 +28,7 @@ module.exports = (sequelize, DataTypes) => {
 			alt_frontend_attribute: DataTypes.STRING,
 			product_weight: DataTypes.STRING,
 			price: DataTypes.FLOAT,
+			weight: DataTypes.STRING,
 		},
 		{
 			sequelize,

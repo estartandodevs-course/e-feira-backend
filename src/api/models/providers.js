@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
 			description: DataTypes.STRING,
 			phone_number1: DataTypes.STRING,
 			phone_number2: DataTypes.STRING,
+			provider_highlight: DataTypes.BOOLEAN,
 		},
 		{
 			sequelize,
