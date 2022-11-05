@@ -14,8 +14,6 @@ class LatestStreetMarketController {
 					["phone_number2", "phone_number2"],
 				],
 				where: { provider_highlight: true },
-				limit: 2,
-				order: Sequelize.literal("random()"),
 			});
 
 			const productsGroups = [];
@@ -40,11 +38,10 @@ class LatestStreetMarketController {
 					limit: 5,
 				});
 
-				const providerResource = providerResponse(provider.dataValues);
+				const providerResource = providerResponse(provider.dataValues, products);
 
 				productsGroups.push({
-					...providerResource,
-					products,
+					...providerResource
 				});
 			}
 
