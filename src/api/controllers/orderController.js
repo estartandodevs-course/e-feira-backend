@@ -1,5 +1,4 @@
 const database = require("../models");
-const request = require("../mappers/orderRequest");
 
 const error = (err) => `{ status: 500, message: ${err.message} }`;
 const success = "{ status: 200, message: success }";

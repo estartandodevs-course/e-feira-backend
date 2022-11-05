@@ -21,8 +21,8 @@ app.use(bodyParser.json());
 app.use(products, providers, highlights, category, streetMarket, user, order);
 app.get("/api", (req, res) => {
 	res.status(200).send({
-		message: "Hi! Welcome to the API",
-		version: "1.2.2",
+		message: "Hi! Welcome to the API!",
+		version: "1.3.2",
 		date: new Date(),
 	});
 });
