@@ -14,6 +14,8 @@ class LatestStreetMarketController {
 					["phone_number2", "phone_number2"],
 				],
 				where: { provider_highlight: true },
+				order: [Sequelize.literal("random()")],
+				limit: 2,
 			});
 
 			const productsGroups = [];
