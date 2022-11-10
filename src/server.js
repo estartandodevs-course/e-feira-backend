@@ -22,7 +22,7 @@ app.use(products, providers, highlights, category, streetMarket, user, order);
 app.get("/api", (req, res) => {
 	res.status(200).send({
 		message: "Hi! Welcome to the API!",
-		version: "1.4.0",
+		version: "1.4.1",
 		date: new Date(),
 	});
 });

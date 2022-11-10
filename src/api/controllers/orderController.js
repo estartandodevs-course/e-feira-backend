@@ -1,4 +1,5 @@
 const database = require("../models");
+const ReceiptService = require("../services/receiptService");
 
 const error = (err) => `{ status: 500, message: ${err.message} }`;
 const success = { status: 200, message: "success" };
@@ -52,8 +53,9 @@ class OrderController {
 			const createItens = await database.Order_itens.bulkCreate(
 				dataItens
 			);
+			const receipt = await ReceiptService.GetReceipt(orderId);
 
-			return res.status(200).json(success);
+			return res.status(200).json({ ...success, ...receipt });
 		} catch (err) {
 			return res.status(500).send(error(err));
 		}
