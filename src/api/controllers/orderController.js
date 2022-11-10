@@ -31,11 +31,11 @@ class OrderController {
 					name: name,
 					surname: surname,
 				},
-			});	
+			});
 
 			const data = {
-				...order, 
-				user_id : Number(userid)
+				...order,
+				user_id: Number(userid),
 			};
 
 			const createOrder = await database.Orders.create(data);
@@ -46,7 +46,7 @@ class OrderController {
 				order_id: orderId,
 				product_id: item.product_id,
 				individual_price: item.individual_price,
-				amount: item.amount
+				amount: item.amount,
 			}));
 
 			const createItens = await database.Order_itens.bulkCreate(
