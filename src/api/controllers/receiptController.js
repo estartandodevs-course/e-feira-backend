@@ -9,7 +9,8 @@ class ReceiptController {
 				attributes: [
 					["id", "Id do Pedido"],
 					["address", "Endereço"],
-					["total_price", "Preço Total"],
+					["total_price", "Preço Total dos Produtos"],
+					["grand_total", "Preço Total do Pedido"],
 					["change", "Troco"],
 					["delivery_tax", "Taxa de Entrega"],
 					["user_id", "Id do Usuário"],

@@ -191,7 +191,7 @@ module.exports = {
 				{
 					name: "Cenouras",
 					photo_url:
-						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667155168/products/cenouras.png",
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667745735/products/cenoura332_xpwnru.png",
 					type_frontend_attribute: "market-category",
 					alt_frontend_attribute: "Foto de Cenouras",
 					product_weight: "250g",
@@ -205,7 +205,7 @@ module.exports = {
 				{
 					name: "Banana Maçã",
 					photo_url:
-						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667237059/products/banana-maca-2.png",
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667745520/products/banana332_cw2olc.png",
 					type_frontend_attribute: "market-category",
 					alt_frontend_attribute: "Foto de Banana Maçã",
 					product_weight: "1kg",
@@ -233,7 +233,7 @@ module.exports = {
 				{
 					name: "Maçã Argentina",
 					photo_url:
-						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667161156/products/macas-vermelhas.png",
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667745816/products/macas-vermelhas332_n9vbyr.png",
 					type_frontend_attribute: "market-category",
 					alt_frontend_attribute: "Foto de Maçã Argentina",
 					product_weight: "1kg",
@@ -247,7 +247,7 @@ module.exports = {
 				{
 					name: "Maçã Verde",
 					photo_url:
-						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667161294/products/maca-verde.png",
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667745930/products/maca-verde332_efdsqm.png",
 					type_frontend_attribute: "market-category",
 					alt_frontend_attribute: "Foto de Maçã Verde",
 					product_weight: "1kg",
@@ -303,7 +303,7 @@ module.exports = {
 				{
 					name: "Queijo Mussarela",
 					photo_url:
-						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667155168/products/queijo-mussarela.png",
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667951559/products/queijo-mussarela332_ocezbm.png",
 					type_frontend_attribute: "market-category",
 					alt_frontend_attribute: "Foto de Queijo Mussarela",
 					product_weight: "250g (bandeja)",
@@ -317,7 +317,7 @@ module.exports = {
 				{
 					name: "Iogurte Natural",
 					photo_url:
-						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667238400/products/iogurte-natural.png",
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667951200/products/iogurte3322_gqkazf.png",
 					type_frontend_attribute: "market-category",
 					alt_frontend_attribute: "Foto de Iogurte Natural",
 					product_weight: "500g",
@@ -331,7 +331,7 @@ module.exports = {
 				{
 					name: "Doce de Leite Chocolate",
 					photo_url:
-						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667155168/products/doce-de-leite.png",
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667951200/products/doce-de-leite332_sn8s3w.png",
 					type_frontend_attribute: "market-category",
 					alt_frontend_attribute: "Foto de Doce de Leite Chocolate",
 					product_weight: "500g",
@@ -345,7 +345,7 @@ module.exports = {
 				{
 					name: "Manteiga",
 					photo_url:
-						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667241095/products/manteiga.png",
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667951200/products/manteiga332_zwd0md.png",
 					product_weight: "250g",
 					type_frontend_attribute: "Laticínios",
 					alt_frontend_attribute: "Foto de Manteiga",
@@ -359,7 +359,7 @@ module.exports = {
 				{
 					name: "Leite Integral",
 					photo_url:
-						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667241098/products/leite-integral.png",
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667951200/products/leite-integral332_ffkxbk.png",
 					product_weight: "1 litro",
 					type_frontend_attribute: "Laticínios",
 					alt_frontend_attribute: "Foto de Leite Integral",
@@ -483,7 +483,7 @@ module.exports = {
 				{
 					name: "Peito de Frango",
 					photo_url:
-						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667245307/products/peito-de-frango.png",
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667746497/products/peito-de-frango332_iktc0d.png",
 					product_weight: "500g",
 					type_frontend_attribute: "Carnes",
 					alt_frontend_attribute: "Foto de Peito de Frango",
@@ -497,7 +497,7 @@ module.exports = {
 				{
 					name: "Frango Inteiro",
 					photo_url:
-						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667245352/products/frango-inteiro.png",
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667746495/products/frango-inteiro332_sgimb8.png",
 					product_weight: "2kg",
 					type_frontend_attribute: "Carnes",
 					alt_frontend_attribute: "Foto de Frango Inteiro",
@@ -525,7 +525,7 @@ module.exports = {
 				{
 					name: "Coxa de Frango",
 					photo_url:
-						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667245285/products/coxa-de-frango.png",
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667746495/products/coxa-de-frango332_t8h4mq.png",
 					product_weight: "1Kg (4 a 5 unidades)",
 					type_frontend_attribute: "Carnes",
 					alt_frontend_attribute: "Foto de Coxa de Frango",
@@ -539,7 +539,7 @@ module.exports = {
 				{
 					name: "Peito de Frango Temperado",
 					photo_url:
-						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667245269/products/peito-de-frango-temperado.png",
+						"https://res.cloudinary.com/do1q8dwvg/image/upload/v1667746495/products/peito-de-frango-temperado332_jaelk2.png",
 					product_weight: "500g (2 unidades)",
 					type_frontend_attribute: "Carnes",
 					alt_frontend_attribute: "Foto de Peito de Frango Temperado",

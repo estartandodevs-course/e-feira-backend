@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
 			address: DataTypes.STRING,
 			payment_method: DataTypes.STRING,
 			total_price: DataTypes.FLOAT,
+			grand_total: DataTypes.FLOAT,
 			change: DataTypes.FLOAT,
 			delivery_tax: DataTypes.FLOAT,
 		},

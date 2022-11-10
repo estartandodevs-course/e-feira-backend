@@ -18,6 +18,9 @@ module.exports = {
 			total_price: {
 				type: Sequelize.FLOAT,
 			},
+			grand_total: {
+				type: Sequelize.FLOAT,
+			},
 			change: {
 				type: Sequelize.FLOAT,
 			},

@@ -1,7 +1,7 @@
 const database = require("../models");
 
 const error = (err) => `{ status: 500, message: ${err.message} }`;
-const success = "{ status: 200, message: success }";
+const success = { status: 200, message: "success" };
 class OrderController {
 	static async GetOrders(req, res) {
 		try {
@@ -22,8 +22,7 @@ class OrderController {
 	}
 
 	static async PostAnOrder(req, res) {
-		const { order } = req.body[0];
-		const { order_itens } = req.body[1];
+		const { order, order_itens } = req.body;
 		const { userid, name, surname } = req.headers;
 		try {
 			const [user, created] = await database.Users.findOrCreate({
@@ -32,27 +31,31 @@ class OrderController {
 					name: name,
 					surname: surname,
 				},
-			});
+			});	
 
-			database.Orders.beforeCreate(async (order, options) => {
-				const userId = await user.id;
-				order.user_id = userId;
-			});
+			const data = {
+				...order, 
+				user_id : Number(userid)
+			};
 
-			const createOrder = await database.Orders.create(order);
+			const createOrder = await database.Orders.create(data);
 
-			database.Order_itens.beforeBulkCreate(async (order, options) => {
-				const orderId = await createOrder.id;
-				order.map((item) => (item.order_id = orderId));
-			});
+			const orderId = createOrder.id;
+
+			const dataItens = order_itens.map((item) => ({
+				order_id: orderId,
+				product_id: item.product_id,
+				individual_price: item.individual_price,
+				amount: item.amount
+			}));
 
 			const createItens = await database.Order_itens.bulkCreate(
-				order_itens
+				dataItens
 			);
 
 			return res.status(200).json(success);
 		} catch (err) {
-			res.status(500).send(error(err));
+			return res.status(500).send(error(err));
 		}
 	}
 
